@@ -15,7 +15,7 @@ class SearchBox extends React.Component {
   render() {
     return (
       <div className="ui segment" style={{ margin: "20px 100px 20px 100px" }}>
-        <form onSubmit={(event) => this.handleSubmit(event)} className="ui form">
+        <form onSubmit={this.handleSubmit} className="ui form">
           <div className="field">
             <label htmlFor="search-input">Search images</label>
             <input
