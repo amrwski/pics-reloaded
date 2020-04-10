@@ -7,11 +7,15 @@ class SearchBox extends React.Component {
     this.setState({ term: event.target.value })
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault()
+    this.props.onSearchSubmit(this.state.term)
+  }
+
   render() {
-    const term = this.state.term
     return (
       <div className="ui segment" style={{ margin: "20px 100px 20px 100px" }}>
-        <form onSubmit={(event) => this.props.handleSubmit(event, term)} className="ui form">
+        <form onSubmit={(event) => this.handleSubmit(event)} className="ui form">
           <div className="field">
             <label htmlFor="search-input">Search images</label>
             <input
